@@ -1,0 +1,31 @@
+name: Build Avisuals
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+          cache: gradle
+
+      - run: chmod +x gradlew
+      - run: ./gradlew build
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Avisuals-Fabric-1.21.4
+          path: build/libs/*.jar
+          if-no-files-found: error
