@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "id": "avisuals",
+  "version": "${version}",
+  "name": "Avisuals",
+  "description": "Local cosmetic particle trails",
+  "authors": ["quarmgaming-gif"],
+  "environment": "client",
+  "entrypoints": {"client": ["com.quarmgaming.avisuals.Avisuals"]},
+  "depends": {
+    "fabricloader": ">=0.16.10",
+    "minecraft": "~1.21.4",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
